@@ -63,8 +63,8 @@ int left_bound(int[] nums, int target) {
             right = mid; // 注意
         }
     }
-    return left;
-}
+    return left;}
+<br>
 二分搜索算法之寻找右侧边界的二分搜索：
 <br>
 int right_bound(int[] nums, int target) {
@@ -81,9 +81,8 @@ int right_bound(int[] nums, int target) {
             right = mid;
         }
     }
-    return left - 1; // 注意
-}
-
+    return left - 1; // 注意 }
+<br>
 
 
 
