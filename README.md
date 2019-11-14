@@ -42,3 +42,54 @@
 33、搜索旋转数组
 当对三个表达式a、b、c判断：三者皆为真或者任意一为真都满足条件时，可以通过异或来表示，即a^b^c。    
 <br>
+34、在排序数组中查找元素的第一个和最后一个位置    
+<br>
+二分搜索算法之寻找左侧边界的二分搜索：
+<br>
+1、循环条件while(left<right)
+<br>
+int left_bound(int[] nums, int target) {
+    if (nums.length == 0) return -1;
+    int left = 0;
+    int right = nums.length; // 注意
+    
+    while (left < right) { // 注意
+        int mid = (left + right) / 2;
+        if (nums[mid] == target) {
+            right = mid;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else if (nums[mid] > target) {
+            right = mid; // 注意
+        }
+    }
+    return left;
+}
+二分搜索算法之寻找右侧边界的二分搜索：
+<br>
+int right_bound(int[] nums, int target) {
+    if (nums.length == 0) return -1;
+    int left = 0, right = nums.length;
+    
+    while (left < right) {
+        int mid = (left + right) / 2;
+        if (nums[mid] == target) {
+            left = mid + 1; // 注意
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else if (nums[mid] > target) {
+            right = mid;
+        }
+    }
+    return left - 1; // 注意
+}
+
+
+
+
+
+
+
+
+
+
