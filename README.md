@@ -83,6 +83,10 @@ int right_bound(int[] nums, int target) {
     }
     return left - 1; // 注意 }
 <br>
+39、组合总和
+<br>
+42、接雨水
+<br>
 
 
 
